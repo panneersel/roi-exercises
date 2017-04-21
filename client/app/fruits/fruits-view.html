@@ -1,0 +1,18 @@
+<h1>Hello customer</h1>
+<label>Show filter: <input type="checkbox"  ng-model="showFilter"></label>
+<div ng-show="showFilter">
+    <h2>Filter value: {{name | lowercase}}</h2>
+    Filter: <input type="text" ng-model="name">
+</div>
+<ul>
+    <li ng-repeat="fruit_name in fruits |filter: (showFilter ? name : '')">
+        {{fruit_name | uppercase}}
+        <a href="" ng-click="remove(fruit_name)">Remove</a>
+    </li>
+</ul>
+
+<h2>Add fruit</h2>
+<form>
+    <label>Fruit Name: <input ng-model="fruitName"></label>
+    <button ng-click="add()">Add</button>
+</form>

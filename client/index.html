@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="fruitStall">
+<head>
+    <meta charset="UTF-8">
+    <title>You searched for {{name}}</title>
+
+
+</head>
+<body>
+    <a href="#!/fruits">Fruits</a> | <a href="#!/juices">Juices </a> | <a href="#!/demo">Demo</a>
+
+    <div ng-view>
+
+    </div>
+
+    <script src="js/vendor/angular.js"></script>
+    <script src="js/vendor/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/juices/juices-module.js"></script>
+    <script src="app/juices/juices-factory.js"></script>
+    <script src="app/juices/juices-controller.js"></script>
+    <script src="app/fruits/fruits-module.js"></script>
+    <script src="app/fruits/fruits-factory.js"></script>
+    <script src="app/fruits/fruits-controller.js"></script>
+    <script src="app/demo/demo-module.js"></script>
+    <script src="app/demo/demo-controller.js"></script>
+
+</body>
+</html>

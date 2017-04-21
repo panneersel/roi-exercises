@@ -1,0 +1,24 @@
+<h1>Juice Stall</h1>
+<h2><label ng-show="jc.errorMessage">{{jc.errorMessage}}</label> </h2>
+<button ng-click="jc.load()">Load</button>
+<button ng-click="jc.save()">Save</button>
+<label>Show filter: <input type="checkbox"  ng-model="jc.showFilter"></label>
+
+<div ng-show="jc.showFilter">
+    <h2>Filter value: {{jc.name | lowercase}}</h2>
+    Filter: <input type="text" ng-model='jc.name'>
+</div>
+<ul>
+    <li ng-repeat="juice in jc.juices |filter: (jc.showFilter ? jc.name : '')">
+        {{juice.name}}, {{juice.price}}$, {{juice.mixOf}}
+        <a href="" ng-click="jc.remove(juice)">Remove</a>
+    </li>
+</ul>
+
+<h2>Add Juice</h2>
+<form>
+    <label>Name: <input ng-model='jc.newJuice.name'></label>
+    <label>Price: <input ng-model='jc.newJuice.price'></label>
+    <label>Mix Of: <input ng-model='jc.newJuice.mixOf'></label>
+    <button ng-click="jc.add()">Add</button>
+</form>
